@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra o Segredo dos Vídeos que Viralizam e Vendem Todos os Dias!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-purple: #9f00ff;
+            --neon-blue: #00eaff;
+            --neon-red: #ff0055;
+            --neon-white: #ffffff;
+            --bg-dark: #0a0a0a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: white;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue), var(--neon-purple));
+            box-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-blue);
+        }
+        
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 5px rgba(159, 0, 255, 0.3);
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--neon-blue);
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+        
+        .hero-image {
+            max-width: 300px;
+            margin: 30px auto;
+            position: relative;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            border-radius: 15px;
+            border: 3px solid var(--neon-purple);
+            box-shadow: 0 0 20px var(--neon-purple), 0 0 40px rgba(159, 0, 255, 0.3);
+        }
+        
+        .benefits {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 1px solid var(--neon-purple);
+            box-shadow: 0 0 15px rgba(159, 0, 255, 0.2);
+        }
+        
+        .benefits h3 {
+            color: var(--neon-blue);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .benefits ul {
+            list-style-type: none;
+        }
+        
+        .benefits li {
+            padding: 15px 0;
+            border-bottom: 1px dashed rgba(0, 234, 255, 0.3);
+            position: relative;
+            padding-left: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .benefits li:last-child {
+            border-bottom: none;
+        }
+        
+        .benefits li::before {
+            content: '✓';
+            color: var(--neon-blue);
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: 10px;
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+        
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 50px 0;
+        }
+        
+        .testimonial {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            flex: 1 1 300px;
+            max-width: 350px;
+            border: 1px solid var(--neon-purple);
+            box-shadow: 0 0 10px rgba(159, 0, 255, 0.2);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(0, 234, 255, 0.1);
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-family: serif;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial .author {
+            color: var(--neon-blue);
+            font-weight: bold;
+            text-align: right;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(159, 0, 255, 0.1), rgba(0, 234, 255, 0.1)));
+            border-radius: 15px;
+            border: 1px solid var(--neon-purple);
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--neon-white);
+            margin: 20px 0;
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+        
+        .price span {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: var(--neon-red);
+            margin-right: 10px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px var(--neon-purple), 0 0 30px rgba(0, 234, 255, 0.5);
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            animation: pulse 2s infinite;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--neon-purple), 0 0 40px rgba(0, 234, 255, 0.8);
+            animation: none;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 15px var(--neon-purple), 0 0 30px rgba(0, 234, 255, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px var(--neon-purple), 0 0 40px rgba(0, 234, 255, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 15px var(--neon-purple), 0 0 30px rgba(0, 234, 255, 0.5);
+            }
+        }
+        
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            color: var(--neon-blue);
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0, 234, 255, 0.2);
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--neon-blue);
+        }
+        
+        .timer {
+            background: rgba(255, 0, 85, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px 0;
+            border: 1px solid var(--neon-red);
+        }
+        
+        .timer-text {
+            color: var(--neon-red);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Descubra o Segredo dos Vídeos que Viralizam e Vendem Todos os Dias!</h1>
+            <h2>Aprenda como usar cortes virais para ganhar dinheiro mesmo começando do zero. Método testado e aprovado.</h2>
+            
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/300x500/0a0a0a/9f00ff?text=ULTRA+VIRAIS" alt="Ultra Virais - Vídeos que viralizam">
+            </div>
+        </header>
+        
+        <section class="benefits">
+            <h3>O QUE VOCÊ VAI RECEBER:</h3>
+            <ul>
+                <li>Ideias de vídeos virais prontos para usar hoje mesmo</li>
+                <li>Acesso imediato por um preço especial por tempo limitado</li>
+                <li>Método simples e direto para iniciantes que querem resultados rápidos</li>
+                <li>Técnicas aplicáveis em Reels, Shorts e TikTok</li>
+                <li>Estratégias de edição que prendem a atenção do público</li>
+                <li>Modelos de roteiros que funcionam para qualquer nicho</li>
+            </ul>
+        </section>
+        
+        <section class="testimonials">
+            <div class="testimonial">
+                <p>"Depois que apliquei as técnicas do Ultra Virais, meu canal explodiu! De 100 views por vídeo para mais de 50k em apenas 2 semanas. Incrível!"</p>
+                <div class="author">- Carlos M., 28 anos</div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"Nunca imaginei que conseguiria ganhar dinheiro com vídeos curtos. Com o método Ultra Virais já fiz mais de R$3.000 em um mês. Recomendo demais!"</p>
+                <div class="author">- Juliana S., 32 anos</div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"Estava desanimada com meus resultados nas redes sociais até encontrar o Ultra Virais. As ideias são tão boas que meu primeiro vídeo viralizou em 24h!"</p>
+                <div class="author">- Rafaela P., 25 anos</div>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <h3>NÃO PERCA ESTA OPORTUNIDADE!</h3>
+            
+            <div class="timer">
+                <div class="timer-text">OFERTA POR TEMPO LIMITADO!</div>
+            </div>
+            
+            <div class="price">
+                <span>R$97,00</span> R$9,99
+            </div>
+            
+            <p>Aproveite este preço especial antes que volte ao valor normal!</p>
+            
+            <a href="https://pay.kirvano.com/e185d5a8-a472-46a2-a9a1-30db14ef7290?aff=bb57857b-a10f-4182-8531-6fcae36c29a3" class="cta-button">QUERO ACESSAR AGORA 🔥</a>
+            
+            <div class="guarantee">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L4 5V11.09C4 16.14 7.41 20.85 12 22C16.59 20.85 20 16.14 20 11.09V5L12 2Z" fill="#00eaff"/>
+                    <path d="M12 22C16.59 20.85 20 16.14 20 11.09V5L12 2L4 5V11.09C4 16.14 7.41 20.85 12 22Z" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 11L11 13L15 9" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>7 Dias de Garantia Incondicional</span>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>Essa é uma página feita por um afiliado independente, e não representa a Kirvano oficialmente.</p>
+        <div class="footer-links">
+            <a href="#">Termos de Uso</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Contato</a>
+        </div>
+    </footer>
+</body>
+</html>
